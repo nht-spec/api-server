@@ -3,12 +3,9 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"engines": {
-		"node": "14.x"
-	},
 	"scripts": {
 		"start": "nodemon index.js",
-		"heroku-postbuild": "ng build --prod"
+		"heroku-postbuild": "cd ANGULAR_APP_FOLDER && npm install"
 	},
 	"author": "",
 	"license": "ISC",
