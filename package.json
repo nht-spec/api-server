@@ -8,8 +8,7 @@
 		"npm": "4.6.1"
 	},
 	"scripts": {
-		"start": "nodemon index.js",
-		"heroku-postbuild": "cd ANGULAR_APP_FOLDER && npm install"
+		"start": "nodemon index.js"
 	},
 	"author": "",
 	"license": "ISC",
