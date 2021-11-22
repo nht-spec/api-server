@@ -1,0 +1,4 @@
+{
+	"appService.deploySubpath": ".",
+	"appService.defaultWebAppToDeploy": "/subscriptions/8ab408dc-2e5e-4267-9482-b879956cfdca/resourceGroups/api-server/providers/Microsoft.Web/sites/nodejs-api"
+}
