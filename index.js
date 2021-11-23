@@ -15,7 +15,7 @@ app.use(express.json());
 
 mongoose
 	.connect(process.env.MONGO_URL)
-	.then(console.log('conect to mongo'))
+	.then(console.log('connect to mongo'))
 	.catch((err) => console.log(err));
 
 const storage = multer.diskStorage({
