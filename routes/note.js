@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
 	const newNote = new Note(req.body);
 	try {
 		const saveNote = await newNote.save();
-		res.status(200).json(saveNote);
+		res.status(200).json({ notes: saveNote });
 	} catch (err) {
 		res.status(500).json(err);
 	}
@@ -25,7 +25,7 @@ router.put('/:id', async (req, res) => {
 					},
 					{ new: true }
 				);
-				res.status(200).json(updateNote);
+				res.status(200).json({ notes: updateNote });
 			} catch (err) {
 				res.status(500).json(err);
 			}
@@ -60,7 +60,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/:id', async (req, res) => {
 	try {
 		const note = await Note.findById(req.params.id);
-		res.status(200).json(note);
+		res.status(200).json({ notes: note });
 	} catch (err) {
 		res.status(500).json(err);
 	}
@@ -76,7 +76,7 @@ router.get('/', async (req, res) => {
 		} else {
 			notes = await Note.find();
 		}
-		res.status(200).json(notes);
+		res.status(200).json({ notes });
 	} catch (err) {
 		res.status(500).json(err);
 	}

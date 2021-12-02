@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
 	const newEvent = new Event(req.body);
 	try {
 		const saveEvent = await newEvent.save();
-		res.status(200).json(saveEvent);
+		res.status(200).json({ event: saveEvent });
 	} catch (err) {
 		res.status(500).json(err);
 	}
@@ -27,7 +27,7 @@ router.put('/:id', async (req, res) => {
 					},
 					{ new: true }
 				);
-				res.status(200).json(updateEvent);
+				res.status(200).json({ event: updateEvent });
 			} catch (err) {
 				res.status(500).json(err);
 			}
@@ -62,7 +62,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/:id', async (req, res) => {
 	try {
 		const event = await Event.findById(req.params.id);
-		res.status(200).json(event);
+		res.status(200).json({ event });
 	} catch (err) {
 		res.status(500).json(err);
 	}
@@ -85,7 +85,7 @@ router.get('/', async (req, res) => {
 		} else {
 			events = await Event.find();
 		}
-		res.status(200).json(events);
+		res.status(200).json({ event: events });
 	} catch (err) {
 		res.status(500).json(err);
 	}

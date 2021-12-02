@@ -6,6 +6,7 @@ const userRoute = require('./routes/users');
 const eventRoute = require('./routes/event');
 const noteRoute = require('./routes/note');
 const taskRoute = require('./routes/task');
+const cors = require('cors');
 const multer = require('multer');
 const app = express();
 
@@ -39,8 +40,8 @@ app.use('/api/users', userRoute);
 app.use('/api/events', eventRoute);
 app.use('/api/notes', noteRoute);
 app.use('/api/tasks', taskRoute);
-
+app.use(cors());
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen('8000', () => {
 	console.log('back end is run');
 });
