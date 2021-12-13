@@ -14,9 +14,24 @@ const EventSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-
-		status: {
-			type: Array,
+		date: {
+			type: String,
+			required: true,
+		},
+		mintime: {
+			type: Number,
+			required: true,
+		},
+		maxtime: {
+			type: Number,
+			required: true,
+		},
+		rangetime: {
+			type: Object,
+			required: true,
+		},
+		color: {
+			type: String,
 			required: false,
 		},
 	},
